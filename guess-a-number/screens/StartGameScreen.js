@@ -22,20 +22,29 @@ const styles = StyleSheet.create({
         padding: 10,
         alignItems: 'center'
     },
-    inputContainer:{
-     width:300,
-     maxWidth:'80%',
-     alignItems:'center'
+    inputContainer: {
+        width: 300,
+        maxWidth: '80%',
+        alignItems: 'center',
+        shadowColor: 'black',
+        shadowOffset: { width: 0, height: 2 },
+        shadowOpacity: 0.26,
+        shadowRadius: 6,
+        backgroundColor: 'white',
+        elevation: 8,
+        borderRadius: 10,
+        padding: 20,
+        marginTop: 10,
     },
-    title:{
-     fontSize:20,
-     marginVertical:10
+    title: {
+        fontSize: 20,
+        marginVertical: 10
     },
-    buttonContainer:{
-      flexDirection:'row',
-      width:'100%',
-      justifyContent:'space-between',
-      paddingHorizontal:15
+    buttonContainer: {
+        flexDirection: 'row',
+        width: '100%',
+        justifyContent: 'space-between',
+        paddingHorizontal: 15
     }
 })
 
