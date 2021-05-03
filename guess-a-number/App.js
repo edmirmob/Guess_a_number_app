@@ -14,13 +14,16 @@ export default function App() {
     setGuessRounds(0);
   }
 
-  const gameOverHandler = numOfRounds =>{
+  const gameOverHandler = numOfRounds => {
     setGuessRounds(numOfRounds);
   }
 
   let content = <StartGameScreen onStartGame={startGameHandler} />
-  if (userNumber && guessRounds <=0) {
-    content = <GameScreen userChoice={userNumber} onGameOver={gameOverHandler} />
+  if (userNumber && guessRounds <= 0) {
+    content = (<GameScreen userChoice={userNumber} onGameOver={gameOverHandler} />
+    );
+  } else if (guessRounds > 0) {
+    content = <GameOverScreen />
   }
 
   return (
@@ -37,3 +40,7 @@ const styles = StyleSheet.create({
     flex: 1
   }
 });
+
+
+
+
