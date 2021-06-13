@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, Text, StyleSheet, Button, TouchableWithoutFeedback, Keyboard, Alert } from 'react-native';
+import { View, Text, StyleSheet, Button, TouchableWithoutFeedback, Keyboard, Alert, Dimensions, ScrollView, KeyboardAvoidingView } from 'react-native';
 import Card from '../components/Card';
 import Colors from '../constants/Colors';
 import Input from '../components/Input';
@@ -44,9 +44,12 @@ const StartGameScreen = props => {
         </Card>
     }
     return (
+        <ScrollView>
+                <KeyboardAvoidingView behavior="position" keyboardVerticalOffset={40}>
         <TouchableWithoutFeedback onPress={() => {
             Keyboard.dismiss();
         }}>
+            
             <View style={styles.screen}>
                 <Text>Start a New Game</Text>
                 <Card style={styles.inputContainer}>
@@ -69,7 +72,10 @@ const StartGameScreen = props => {
                 </Card>
                 {confirmedOutput}
             </View>
+           
         </TouchableWithoutFeedback>
+        </KeyboardAvoidingView>
+            </ScrollView>
     );
 }
 const styles = StyleSheet.create({
@@ -79,8 +85,9 @@ const styles = StyleSheet.create({
         alignItems: "center"
     },
     inputContainer: {
-        width: 300,
-        maxWidth: '80%',
+        width: '80%',
+        maxWidth: '95%',
+        minWidth: 300,
         alignItems: "center",
         marginTop: 10
     },
@@ -109,3 +116,4 @@ const styles = StyleSheet.create({
 })
 
 export default StartGameScreen;
+
